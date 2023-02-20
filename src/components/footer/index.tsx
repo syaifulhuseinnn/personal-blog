@@ -35,6 +35,7 @@ export default function Footer() {
         color="white"
         fontFamily="heading"
         fontSize={{ base: 16 }}
+        textTransform="lowercase"
       >
         SYAIFULHUSEIN
       </Text>
