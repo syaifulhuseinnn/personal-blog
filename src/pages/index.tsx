@@ -1,9 +1,67 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
+import Head from "next/head";
+import {
+  Heading,
+  Box,
+  Flex,
+  Grid,
+  GridItem,
+  Image,
+  Text,
+  Divider,
+  Icon,
+  Input,
+  Link,
+  Button,
+  InputGroup,
+  InputLeftElement,
+} from "@chakra-ui/react";
+import { HiMenu } from "react-icons/hi";
+import { FaSearch } from "react-icons/fa";
+import Header from "../components/header";
+import Hero from "../components/hero";
+import BlogList from "@/components/blog/BlogList";
+import Footer from "@/components/footer";
+import MainLayout from "@/layouts/MainLayout";
 
-const inter = Inter({ subsets: ['latin'] })
+const blogs = [
+  {
+    id: 1,
+    title:
+      "I had not achieved anything in my life until I understood this one thing",
+    post_date: "Oct 21, 2022",
+    body: "I'm baby church-key cardigan Brooklyn yes plz forage quinoa cornhole meggings ",
+    author: "syaifulhusein",
+    banner_image:
+      "https://images.pexels.com/photos/837358/pexels-photo-837358.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  },
+  {
+    id: 2,
+    title: "Don’t look at someone else’s watch",
+    post_date: "Sep 11, 2022",
+    body: "JOMO vape bruh vegan, iceland echo park cray craft beer hashtag selfies seitan jean shorts tofu. Chia enamel pin af, listicle celiac semiotics crucifix plaid farm-to-table pug readymade. Offal poke lo-fi truffaut. Tousled glossier post-ironic enamel pin, schlitz raw denim scenester neutra raclette austin DSA la croix selfies. 3 wolf moon affogato beard organic hexagon synth. Meditation cray raw denim man braid chicharrones offal next level hot chicken forage skateboard kombucha. Forage selvage drinking vinegar pork belly schlitz. Lomo bicycle rights XOXO organic trust fund green juice adaptogen try-hard cronut asymmetrical. Yes plz sustainable salvia enamel pin, chambray ramps narwhal.",
+    author: "syaifulhusein",
+    banner_image:
+      "https://images.pexels.com/photos/39866/entrepreneur-startup-start-up-man-39866.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  },
+  {
+    id: 3,
+    title: "Only in this way will you achieve everything you want",
+    post_date: "Jan 20, 2022",
+    body: "Brooklyn fixie authentic taxidermy +1 put a bird on it coloring book bruh YOLO williamsburg skateboard hell of freegan keytar. Seitan chambray single-origin coffee, shabby chic hell of everyday carry bushwick shoreditch 90's hot chicken mukbang. Chia air plant shoreditch activated charcoal cardigan hella. Banjo meggings tote bag sartorial. Whatever bespoke enamel pin actually, coloring book shoreditch pug. Big mood viral narwhal, fixie seitan craft beer lo-fi humblebrag yr hammock microdosing cliche waistcoat small batch sus. Thundercats sustainable narwhal, vice fanny pack knausgaard sus raw denim small batch freegan asymmetrical wolf salvia. Same tumeric JOMO bespoke 90's. Lo-fi subway tile roof party, mustache put a bird on it quinoa offal.",
+    author: "syaifulhusein",
+    banner_image:
+      "https://images.pexels.com/photos/1709003/pexels-photo-1709003.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  },
+  {
+    id: 4,
+    title: "Node.js from scratch!",
+    post_date: "Jan 20, 2022",
+    body: "Brooklyn fixie authentic taxidermy +1",
+    author: "syaifulhusein",
+    banner_image:
+      "https://images.pexels.com/photos/15113597/pexels-photo-15113597.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+  },
+];
 
 export default function Home() {
   return (
@@ -14,110 +72,13 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>src/pages/index.tsx</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
-          </div>
-        </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
-          </div>
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+      <MainLayout>
+        <Header />
+        <Box as="main">
+          <Hero />
+          <BlogList blogs={blogs} />
+        </Box>
+      </MainLayout>
     </>
-  )
+  );
 }
