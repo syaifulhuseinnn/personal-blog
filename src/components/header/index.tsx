@@ -23,7 +23,9 @@ export default function Header() {
         alignItems="center"
       >
         <InputGroup>
-          <InputLeftElement pointerEvents="none" children={<FaSearch />} />
+          <InputLeftElement pointerEvents="none">
+            <FaSearch />
+          </InputLeftElement>
           <Input
             placeholder="Search blog"
             width="320px"
