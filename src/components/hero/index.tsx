@@ -8,11 +8,11 @@ export default function Hero() {
         src="https://images.pexels.com/photos/1181317/pexels-photo-1181317.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
         alt="img"
         height={{
-          base: 200,
-          "mobile-m": 250,
-          "mobile-l": 250,
-          tablet: 400,
-          laptop: 500,
+          base: 280,
+          "mobile-m": 320,
+          "mobile-l": 350,
+          tablet: 500,
+          laptop: 580,
           "laptop-l": 600,
         }}
         width={{ base: "100%" }}
@@ -20,9 +20,8 @@ export default function Hero() {
       />
       <Box
         bgColor="white"
-        p={{ base: 12 }}
-        px={{ "laptop-l": "32px" }}
-        py={{ "laptop-l": 24 }}
+        px={{ base: 12, tablet: 22, "laptop-l": "32px" }}
+        py={{ base: 12, tablet: 18, "laptop-l": 24 }}
         position="absolute"
         bottom={{ base: 12, tablet: 16 }}
         left={{ base: 12, tablet: 16 }}
@@ -31,38 +30,24 @@ export default function Hero() {
           // "mobile-m": 288,
           // "mobile-l": 338,
           tablet: "60%",
-          "laptop-l": "50%",
+          "laptop-l": "51%",
         }}
         maxWidth={{
           base: 248,
           "mobile-m": 303,
           "mobile-l": 353,
           tablet: "60%",
-          "laptop-l": "50%",
+          "laptop-l": "51%",
         }}
-        // minWidth={{
-        //   base: 233,
-        //   "mobile-m": 288,
-        //   "mobile-l": 338,
-        //   tablet: "60%",
-        //   "laptop-l": "45%",
-        // }}
-        // maxWidth={{
-        //   base: 233,
-        //   "mobile-m": 288,
-        //   "mobile-l": 338,
-        //   tablet: "60%",
-        //   "laptop-l": "45%",
-        // }}
       >
         <Heading
           as="h1"
           fontWeight="bold"
           fontSize={{
             base: 12,
-            "mobile-m": 14,
-            "mobile-l": 16,
-            tablet: 20,
+            "mobile-m": 16,
+            "mobile-l": 20,
+            tablet: 22,
             laptop: 26,
             "laptop-l": 30,
           }}
@@ -75,15 +60,13 @@ export default function Hero() {
         <Text
           fontSize={{
             base: 10,
-            "mobile-m": 12,
-            "mobile-l": 14,
-            tablet: 16,
+            "mobile-m": 14,
+            "mobile-l": 16,
+            tablet: 18,
             laptop: 20,
           }}
           fontWeight="medium"
-          mt={{ base: 6, "laptop-l": 14 }}
-          mb={{ "laptop-l": 14 }}
-          // mb={{ base: "2" }}
+          my={{ base: 6, laptop: 12, "laptop-l": 14 }}
           noOfLines={{ base: 2, tablet: 3, laptop: 3 }}
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus dolor
@@ -97,7 +80,13 @@ export default function Hero() {
           as="small"
           color="grey.200"
           fontWeight="normal"
-          fontSize={{ base: 10, "mobile-l": 12, tablet: 14, laptop: 16 }}
+          fontSize={{
+            base: 10,
+            "mobile-m": 12,
+            "mobile-l": 14,
+            tablet: 16,
+            laptop: 18,
+          }}
         >
           syaifulhusein . Oct 23, 2023
         </Text>

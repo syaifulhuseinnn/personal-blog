@@ -33,7 +33,7 @@ export default function BlogItem({
       <Image
         src={imageSrc}
         alt="img"
-        height={{ base: 116, tablet: 210, laptop: 300, "laptop-l": 380 }}
+        height={{ base: 116, tablet: 280, laptop: 300, "laptop-l": 380 }}
         width={{ base: "102px", tablet: "100%" }}
         objectFit="cover"
       />
@@ -46,7 +46,8 @@ export default function BlogItem({
         // top={{ tablet: 110, laptop: 200, "laptop-l": 245 }}
         bottom={{ tablet: 143, laptop: 163, "laptop-l": 193 }}
         left={{ tablet: 16 }}
-        p={{ tablet: 12 }}
+        py={{ tablet: 12, laptop: 16, "laptop-l": "20px" }}
+        px={{ tablet: 12, laptop: "20px", "laptop-l": 24 }}
         width={{ tablet: 314, laptop: 390 }}
       >
         <Heading
@@ -54,6 +55,7 @@ export default function BlogItem({
           fontSize={20}
           color="purple.200"
           noOfLines={{ base: 2, laptop: 3 }}
+          mb={{ base: 10, laptop: 14 }}
         >
           {title}
         </Heading>
@@ -61,7 +63,7 @@ export default function BlogItem({
           as="small"
           color="grey.200"
           fontWeight="normal"
-          fontSize={{ base: 10, "laptop-l": 12 }}
+          fontSize={{ base: 14, laptop: 16 }}
         >
           {author} . Oct 23, 2022
         </Text>

@@ -37,7 +37,7 @@ export default function Footer() {
         fontSize={{ base: 16 }}
         textTransform="lowercase"
       >
-        SYAIFULHUSEIN
+        SYAIFULHUSEIN.com
       </Text>
       <Box>
         <Text fontWeight={{ base: "bold" }} color="white" mb={16}>
