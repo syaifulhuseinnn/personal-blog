@@ -1,5 +1,5 @@
 # Description
-__syaifulhusein.com__ is a personal blog built using Next.js, TypeScript, Chakra UI, Algolia, Strapi, Quill.js, Firebase, and Disqus. The website is created and managed by Syaiful Husein, a React.js developer who uses the platform to share his thoughts and ideas on topics like React best practices, web development tools, and personal growth.
+__syaifulhusein.com__ is a personal blog built using Next.js, TypeScript, Chakra UI, Algolia, Strapi, Quill.js, Firebase, and Disqus. The website is created and managed by me, a React.js developer who uses the platform to share my thoughts and ideas on topics like React best practices, web development tools, and personal growth.
 # Features
 - Server-side rendering using Next.js for improved performance and SEO
 - Strong typing using TypeScript for better maintainability and fewer bugs

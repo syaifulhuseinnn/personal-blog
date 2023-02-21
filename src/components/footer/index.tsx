@@ -34,7 +34,7 @@ export default function Footer() {
         fontWeight={{ base: "extrabold" }}
         color="white"
         fontFamily="heading"
-        fontSize={{ base: 16 }}
+        fontSize={{ base: 12, tablet: 14, laptop: 16 }}
         textTransform="lowercase"
       >
         SYAIFULHUSEIN.com
@@ -67,7 +67,10 @@ export default function Footer() {
           Built with
         </Text>
         <UnorderedList marginInlineStart={0}>
-          <Box display="flex" gap={{ base: "40px", laptop: "60px" }}>
+          <Box
+            display="flex"
+            gap={{ base: "40px", tablet: "10px", laptop: "60px" }}
+          >
             <Box>
               <ListItem
                 listStyleType="none"

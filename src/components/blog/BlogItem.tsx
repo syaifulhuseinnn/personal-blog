@@ -6,7 +6,7 @@ type BlogItemProps = {
   title: string;
   headline: string;
   author: string;
-  key?: any;
+  id: number;
 };
 
 function sliceHeadline(headline: string) {
@@ -18,7 +18,7 @@ export default function BlogItem({
   title,
   headline,
   author,
-  key,
+  id,
 }: BlogItemProps) {
   return (
     <GridItem
@@ -27,7 +27,7 @@ export default function BlogItem({
       display={{ base: "flex" }}
       flexDirection={{ base: "row", tablet: "column" }}
       gap={{ base: 10, tablet: 18, "laptop-l": 24 }}
-      key={key}
+      key={id}
       position={{ tablet: "relative" }}
     >
       <Image
@@ -48,7 +48,11 @@ export default function BlogItem({
         left={{ tablet: 16 }}
         py={{ tablet: 12, laptop: 16, "laptop-l": "20px" }}
         px={{ tablet: 12, laptop: "20px", "laptop-l": 24 }}
-        width={{ tablet: 314, laptop: 390 }}
+        width={{
+          tablet: "calc(100% - 32px)",
+          laptop: "calc(100% - 15%)",
+          "laptop-l": "calc(100% - 170px)",
+        }}
       >
         <Heading
           fontWeight="bold"
@@ -103,17 +107,22 @@ export default function BlogItem({
       >
         <Heading
           fontWeight="bold"
-          fontSize={16}
+          fontSize={{ base: 12, "mobile-m": 16 }}
           color="purple.200"
-          noOfLines={{ base: 2 }}
+          noOfLines={{ base: 5 }}
         >
           {title}
         </Heading>
-        <Text fontWeight="medium" fontSize={12} noOfLines={{ base: 3 }}>
+        <Text
+          fontWeight="medium"
+          fontSize={12}
+          noOfLines={{ base: 3 }}
+          display={{ base: "none", tablet: "-webkit-box" }}
+        >
           {headline}
         </Text>
         <Text as="small" color="grey.200" fontWeight="normal" fontSize={10}>
-          {author}
+          {author} . Nov 21, 2011
         </Text>
       </Box>
       {/* END */}

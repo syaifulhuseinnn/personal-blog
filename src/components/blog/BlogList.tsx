@@ -21,6 +21,7 @@ export default function BlogList({ blogs }: BlogListProps) {
           title={blog.title}
           headline={blog.body}
           author={blog.author}
+          id={blog.id}
           key={blog.id}
         />
       ))}

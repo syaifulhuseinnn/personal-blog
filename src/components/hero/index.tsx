@@ -26,18 +26,9 @@ export default function Hero() {
         bottom={{ base: 12, tablet: 16 }}
         left={{ base: 12, tablet: 16 }}
         width={{
-          base: "fit-content",
-          // "mobile-m": 288,
-          // "mobile-l": 338,
-          tablet: "60%",
-          "laptop-l": "51%",
-        }}
-        maxWidth={{
-          base: 248,
-          "mobile-m": 303,
-          "mobile-l": 353,
-          tablet: "60%",
-          "laptop-l": "51%",
+          base: "calc(100% - 24px)",
+          tablet: "calc(100% - 40%)",
+          "laptop-l": "calc(100% - 49%)",
         }}
       >
         <Heading
@@ -52,7 +43,7 @@ export default function Hero() {
             "laptop-l": 30,
           }}
           color={{ base: "purple.200" }}
-          noOfLines={{ base: 2, tablet: 3, laptop: 3 }}
+          noOfLines={{ base: 5, tablet: 3, laptop: 3 }}
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad dolorum
           eaque quidem aspernatur sed unde ab est debitis accusamus quod!
@@ -67,7 +58,8 @@ export default function Hero() {
           }}
           fontWeight="medium"
           my={{ base: 6, laptop: 12, "laptop-l": 14 }}
-          noOfLines={{ base: 2, tablet: 3, laptop: 3 }}
+          noOfLines={{ base: 2, tablet: 4, laptop: 4 }}
+          display={{ base: "none", tablet: "-webkit-box" }}
         >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus dolor
           laboriosam adipisci nostrum voluptates dolore praesentium eum vero
