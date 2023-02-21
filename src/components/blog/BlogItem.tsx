@@ -78,7 +78,7 @@ export default function BlogItem({
         fontSize={{ base: 12, laptop: 16, "laptop-l": 20 }}
         noOfLines={{ base: 3 }}
         display={{ base: "none", tablet: "-webkit-box" }}
-        flexGrow={{ laptop: 4 }}
+        flexGrow={{ tablet: 4 }}
       >
         {headline}
       </Text>
