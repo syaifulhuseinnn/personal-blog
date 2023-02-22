@@ -6,7 +6,7 @@ type BlogListProps = {
   blogs: any[];
 };
 
-export default function BlogList({ blogs }: BlogListProps) {
+export default function BlogList({ blogs }: any) {
   return (
     <Grid
       as="section"
@@ -15,12 +15,12 @@ export default function BlogList({ blogs }: BlogListProps) {
       gap={{ base: 16, tablet: 28, "laptop-l": "64px" }}
       my={{ base: 16, tablet: 28, "laptop-l": "64px" }}
     >
-      {blogs.map((blog, index) => (
+      {blogs.map((blog: any, index: number) => (
         <BlogItem
-          imageSrc={blog.banner_image}
-          title={blog.title}
-          headline={blog.body}
-          author={blog.author}
+          imageSrc={blog.attributes.bannerUrl}
+          title={blog.attributes.title}
+          headline={blog.attributes.body}
+          author={blog.attributes.author}
           id={blog.id}
           key={blog.id}
         />

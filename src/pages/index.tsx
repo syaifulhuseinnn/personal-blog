@@ -22,6 +22,7 @@ import Hero from "../components/hero";
 import BlogList from "@/components/blog/BlogList";
 import Footer from "@/components/footer";
 import MainLayout from "@/layouts/MainLayout";
+import { Blogs } from "@/types/Blog";
 
 const blogs = [
   {
@@ -63,7 +64,7 @@ const blogs = [
   },
 ];
 
-export default function Home() {
+export default function Home({ blogs }: any) {
   return (
     <>
       <Head>
@@ -81,4 +82,20 @@ export default function Home() {
       </MainLayout>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const response = await fetch("http://localhost:1337/api/blogs", {
+    headers: {
+      Authorization:
+        "Bearer c7ee3d29bae3005639b2eeccb6f00112f550b7bede16576319c675df5415812125d951ec4acbfae437f386e260d1bb4cde34cef1ce6f1b7e29738ed0e19a52e95568dbcedc5f7643fcd36c4afbc9ae12daa91618255db2d914a2ecb690b3e199d96c04d32983ea4e69824cd2ed764c382b2db4985d87893a6860c02932b7e3ed",
+    },
+  });
+  const { data: blogs } = await response.json();
+
+  return {
+    props: {
+      blogs,
+    },
+  };
 }
